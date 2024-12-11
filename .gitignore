@@ -1,0 +1,33 @@
+Plot/GSM1650068_Adu_Dsec_Mal_AS_R1_clout_genes.fpkm_tracking
+Plot/GSM1650069_Adu_Dsec_Mal_AS_R2_clout_genes.fpkm_tracking
+Plot/GSM1650070_Adu_Dsec_Mal_AS_R3_clout_genes.fpkm_tracking
+Plot/GSM1650071_Adu_Dsec_Fem_AS_R1_clout_genes.fpkm_tracking
+Plot/GSM1650072_Adu_Dsec_Fem_AS_R2_clout_genes.fpkm_tracking
+Plot/GSM1650073_Adu_Dsec_Fem_AS_R3_clout_genes.fpkm_tracking
+Plot/GSM1657327_Adu_Dsec_Mal_JP_R1_clout_genes.fpkm_tracking
+Plot/GSM1657328_Adu_Dsec_Mal_JP_R2_clout_genes.fpkm_tracking
+Plot/GSM1657329_Adu_Dsec_Mal_JP_R3_clout_genes.fpkm_tracking
+Plot/GSM1657330_Adu_Dsec_Fem_JP_R1_clout_genes.fpkm_tracking
+Plot/GSM1657331_Adu_Dsec_Fem_JP_R2_clout_genes.fpkm_tracking
+Plot/GSM1657332_Adu_Dsec_Fem_JP_R3_clout_genes.fpkm_tracking
+Plot/GSM1657333_Adu_Dsim_Mal_JP_R1_clout_genes.fpkm_tracking
+Plot/GSM1657334_Adu_Dsim_Mal_JP_R2_clout_genes.fpkm_tracking
+Plot/GSM1657335_Adu_Dsim_Mal_JP_R3_clout_genes.fpkm_tracking
+Plot/GSM1657336_Adu_Dsim_Fem_JP_R1_clout_genes.fpkm_tracking
+Plot/GSM1657337_Adu_Dsim_Fem_JP_R2_clout_genes.fpkm_tracking
+Plot/GSM1657338_Adu_Dsim_Fem_JP_R3_clout_genes.fpkm_tracking
+Plot/GSM2645722_Adu_Dmel_Mal_AS_R1_clout.fpkm_tracking
+Plot/GSM2645723_Adu_Dmel_Fem_AS_R1_clout.fpkm_tracking
+.DS_Store
+Build fpkm/info.txt
+Build fpkm/data/dsec_index.1.bt2
+Build fpkm/data/dsec_index.2.bt2
+Build fpkm/data/dsec_index.3.bt2
+Build fpkm/data/dsec_index.4.bt2
+Build fpkm/data/dsec_index.rev.1.bt2
+Build fpkm/data/dsec_index.rev.2.bt2
+Build fpkm/data/dsec-all-chromosome-r1.3.fasta
+Build fpkm/data/dsec-all-r1.3.gff
+Build fpkm/data/SRR1952773_1.fastq.gz
+Build fpkm/data/SRR1952773_2.fastq.gz
+Build fpkm/data/SRR1952773/SRR1952773.sra

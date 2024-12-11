@@ -1,0 +1,26 @@
+# RNA-Seq Analysis Scripts
+
+This folder contains scripts that were executed in conjunction with the following FPKM tracking files. These files were required to be in the same directory to ensure proper execution of the scripts:
+
+- GSM2645723_Adu_Dmel_Fem_AS_R1_clout.fpkm_tracking
+- GSM1650068_Adu_Dsec_Mal_AS_R1_clout_genes.fpkm_tracking
+- GSM1650069_Adu_Dsec_Mal_AS_R2_clout_genes.fpkm_tracking
+- GSM1650070_Adu_Dsec_Mal_AS_R3_clout_genes.fpkm_tracking
+- GSM1650071_Adu_Dsec_Fem_AS_R1_clout_genes.fpkm_tracking
+- GSM1650072_Adu_Dsec_Fem_AS_R2_clout_genes.fpkm_tracking
+- GSM1650073_Adu_Dsec_Fem_AS_R3_clout_genes.fpkm_tracking
+- GSM1657327_Adu_Dsec_Mal_JP_R1_clout_genes.fpkm_tracking
+- GSM1657328_Adu_Dsec_Mal_JP_R2_clout_genes.fpkm_tracking
+- GSM1657329_Adu_Dsec_Mal_JP_R3_clout_genes.fpkm_tracking
+- GSM1657330_Adu_Dsec_Fem_JP_R1_clout_genes.fpkm_tracking
+- GSM1657331_Adu_Dsec_Fem_JP_R2_clout_genes.fpkm_tracking
+- GSM1657332_Adu_Dsec_Fem_JP_R3_clout_genes.fpkm_tracking
+- GSM1657333_Adu_Dsim_Mal_JP_R1_clout_genes.fpkm_tracking
+- GSM1657334_Adu_Dsim_Mal_JP_R2_clout_genes.fpkm_tracking
+- GSM1657335_Adu_Dsim_Mal_JP_R3_clout_genes.fpkm_tracking
+- GSM1657336_Adu_Dsim_Fem_JP_R1_clout_genes.fpkm_tracking
+- GSM1657337_Adu_Dsim_Fem_JP_R2_clout_genes.fpkm_tracking
+- GSM1657338_Adu_Dsim_Fem_JP_R3_clout_genes.fpkm_tracking
+- GSM2645722_Adu_Dmel_Mal_AS_R1_clout.fpkm_tracking
+
+Ensure that these files are present in the same directory as the scripts before executing them.
