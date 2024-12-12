@@ -95,6 +95,12 @@ for species, sra_ids in sample_ids.items():
     for sample_id in sra_ids:
         print(f"Processing sample {sample_id} for species {species}...")
 
+        # Check if Cufflinks output already exists
+        cufflinks_output_dir = os.path.join(output_dir, f"{sample_id}_cufflinks")
+        if os.path.exists(cufflinks_output_dir) and os.listdir(cufflinks_output_dir):
+            print(f"Cufflinks output for {sample_id} already exists, skipping sample.")
+            continue
+
         # Download FASTQ files using prefetch and fastq-dump
         fastq_file_1 = os.path.join(fastq_dir, f"{sample_id}_1.fastq.gz")
         fastq_file_2 = os.path.join(fastq_dir, f"{sample_id}_2.fastq.gz")
@@ -108,6 +114,11 @@ for species, sra_ids in sample_ids.items():
                 f"fastq-dump --split-files --gzip --outdir {fastq_dir} {sample_id}",
                 f"Failed to convert SRA file {sample_id} to FASTQ."
             )
+            # Delete the prefetch folder
+            prefetch_folder = os.path.join(os.getcwd(), sample_id)
+            if os.path.exists(prefetch_folder):
+                subprocess.run(f"rm -rf {prefetch_folder}", shell=True)
+                print(f"Deleted prefetch folder {prefetch_folder}.")
         else:
             print(f"FASTQ files for {sample_id} already exist, skipping download.")
 
@@ -122,12 +133,32 @@ for species, sra_ids in sample_ids.items():
             f"Failed to process {sample_id}."
         )
 
+        # Delete STAR alignment intermediate files
+        alignment_files = [
+            os.path.join(output_dir, f"{sample_id}_Log.out"),
+            os.path.join(output_dir, f"{sample_id}_Log.final.out"),
+            os.path.join(output_dir, f"{sample_id}_Log.progress.out"),
+            os.path.join(output_dir, f"{sample_id}_Aligned.sortedByCoord.out.bam"),
+            os.path.join(output_dir, f"{sample_id}_SJ.out.tab")
+        ]
+
+        for file in alignment_files:
+            if os.path.exists(file):
+                os.remove(file)
+                print(f"Deleted {file} to save space.")
+
         # Calculate FPKM with Cufflinks
         gff_file = file_paths[species]["gff"]
         run_command(
-            f"cufflinks -p {threads} -G {gff_file} -o {os.path.join(output_dir, sample_id + '_cufflinks')} {bam_file}",
+            f"cufflinks -p {threads} -G {gff_file} --frag-bias-correct --multi-read-correct -o {os.path.join(output_dir, sample_id + '_cufflinks')} {bam_file}",
             f"Failed to calculate FPKM for {sample_id}."
         )
+
+
+        # Delete BAM file after Cufflinks
+        if os.path.exists(bam_file):
+            os.remove(bam_file)
+            print(f"Deleted {bam_file} after Cufflinks.")
 
         # Delete FASTQ files to save space
         if os.path.exists(fastq_file_1):
