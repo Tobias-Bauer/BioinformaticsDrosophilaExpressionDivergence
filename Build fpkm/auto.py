@@ -138,7 +138,6 @@ for species, sra_ids in sample_ids.items():
             os.path.join(output_dir, f"{sample_id}_Log.out"),
             os.path.join(output_dir, f"{sample_id}_Log.final.out"),
             os.path.join(output_dir, f"{sample_id}_Log.progress.out"),
-            os.path.join(output_dir, f"{sample_id}_Aligned.sortedByCoord.out.bam"),
             os.path.join(output_dir, f"{sample_id}_SJ.out.tab")
         ]
 
@@ -150,7 +149,7 @@ for species, sra_ids in sample_ids.items():
         # Calculate FPKM with Cufflinks
         gff_file = file_paths[species]["gff"]
         run_command(
-            f"cufflinks -p {threads} -G {gff_file} --frag-bias-correct --multi-read-correct -o {os.path.join(output_dir, sample_id + '_cufflinks')} {bam_file}",
+            f"cufflinks -p {threads} -G {gff_file} -o {os.path.join(output_dir, sample_id + '_cufflinks')} {bam_file}",
             f"Failed to calculate FPKM for {sample_id}."
         )
 
